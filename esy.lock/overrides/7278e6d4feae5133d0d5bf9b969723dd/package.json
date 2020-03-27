@@ -1,0 +1,31 @@
+{
+  "name": "esy-sqlite",
+  "version": "0.1.0",
+  "description": "Mirror of SQLite with esy support",
+  "license": "Apache 2.0",
+  "source": "https://www.sqlite.org/2020/sqlite-autoconf-3310100.tar.gz#0c30f5b22152a8166aa3bebb0f4bc1f3e9cc508b",
+  "override": {
+    "build": [
+      ["./configure", "--prefix=#{self.install}"],
+      ["make", "-j4"]
+    ],
+    "install": [
+      ["make", "install"]
+    ],
+    "buildsInSource": true,
+    "exportedEnv": {
+      "LD_LIBRARY_PATH": {
+        "val": "#{self.lib : $LD_LIBRARY_PATH}",
+        "scope": "global"
+      },
+      "PKG_CONFIG_PATH": {
+        "val": "#{self.lib / 'pkgconfig'}",
+        "scope": "global"
+      }
+    },
+    "dependencies": {
+      "@opam/conf-autoconf": "esy-packages/esy-autoconf:package.json#fb93edf",
+      "@opam/conf-pkg-config": "*"
+    }
+  }
+}

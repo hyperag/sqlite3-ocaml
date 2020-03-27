@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "esy-sqlite": "hyperag/esy-sqlite:package.json#4b2614b"
+  }
+}

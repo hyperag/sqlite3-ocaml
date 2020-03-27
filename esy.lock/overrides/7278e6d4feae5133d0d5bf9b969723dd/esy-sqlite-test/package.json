@@ -1,0 +1,14 @@
+{
+  "esy": {
+    "build": [
+      ["make"]
+    ],
+    "buildEnv": {"TARGET_DIR": "#{self.target_dir}"}
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "esy-sqlite": "hyperag/esy-sqlite:package.json#b353f2b"
+  }
+}
