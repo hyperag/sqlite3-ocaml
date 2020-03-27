@@ -1,0 +1,28 @@
+{
+  "name": "sqlite3",
+  "version": "5.0.1",
+  "description": "SQLite3 bindings for OCaml",
+  "license": "Expat",
+  "esy": {
+    "build": [
+      ["dune", "build", "-p", "#{self.name}"]
+    ]
+  },
+  "scripts": {
+    "test": "dune runtest",
+    "doc": "dune build @doc"
+  },
+  "dependencies": {
+    "@opam/base": "*",
+    "@opam/stdio": "*",
+    "esy-sqlite": "hyperag/esy-sqlite#13f5de8"
+  },
+  "devDependencies": {
+    "ocaml": ">= 4.05.0",
+    "@opam/dune": ">= 1.11",
+    "@opam/dune-configurator": "*",
+    "@opam/ppx_inline_test": "*",
+    "@opam/odoc": "*"
+  }
+}
+
